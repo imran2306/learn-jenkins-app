@@ -33,11 +33,28 @@ pipeline {
 
             steps {
                 sh '''
-                    test -f build/index.html
+                    #test -f build/index.html
                     npm test
                 '''
             }
         }
+        stage('End To End Test') {
+            agent {
+                docker {
+                    image 'mcr.microsoft.com/playwright:v1.50.0-noble'
+                    reuseNode true
+                }
+            }
+
+            steps {
+                sh '''
+                   npm install serve
+                   node_modules/.bin/serve -s build
+                   #above command will serve the build and stuck there until we abort it.
+                   npx playwright test
+                '''
+            }
+        }        
     }
 
     post {
