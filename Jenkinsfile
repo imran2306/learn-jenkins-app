@@ -50,7 +50,7 @@ pipeline {
             steps {
                 sh '''
                    npm install serve
-                   node_modules/.bin/serve -s build
+                   #node_modules/.bin/serve -s build
                    #above command will serve the build and stuck there until we abort it.
                    node_modules/.bin/serve -s build &
                    sleep 10
