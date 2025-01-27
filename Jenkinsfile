@@ -12,10 +12,10 @@ pipeline {
             }
             steps {
                 sh '''
-                    node --version
-                    npm --version                
                     echo "checking files at the starting of the container"
                     ls -la
+                    node --version
+                    npm --version                
                     npm ci
                     echo "Checking files after npm ci"
                     ls -la
