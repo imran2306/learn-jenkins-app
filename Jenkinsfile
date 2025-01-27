@@ -11,10 +11,12 @@ pipeline {
             }
             steps {
                 sh '''
-                    ls -la
                     node --version
-                    npm --version
+                    npm --version                
+                    echo "checking files at the starting of the container"
+                    ls -la
                     npm install
+                    echo "Checking files after npm install"
                     ls -la
                     npm run build
                     ls -la
