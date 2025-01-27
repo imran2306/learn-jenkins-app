@@ -15,8 +15,8 @@ pipeline {
                     npm --version                
                     echo "checking files at the starting of the container"
                     ls -la
-                    npm clean install
-                    echo "Checking files after npm install"
+                    npm ci
+                    echo "Checking files after npm ci"
                     ls -la
                     npm run build
                     ls -la
