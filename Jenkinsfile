@@ -38,7 +38,7 @@ pipeline {
                 '''
             }
         }
-        stage('End To End Test') {
+        stage('E2E') {
             agent {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.50.0-noble'
@@ -62,7 +62,7 @@ pipeline {
 
     post {
         always {
-            junit 'test-results/junit.xml'
+            junit 'jest-results/junit.xml'
         }
     }
 }
