@@ -94,7 +94,14 @@ pipeline {
                     node_modules/.bin/netlify deploy --dir=build
                 '''
             }
-        }        
+        } 
+        stage('Manual Approval') {
+            steps {
+                timeout(1) {
+                    input 'Ready to Deploy?'
+                }
+            }
+        }     
         stage('Deploy to Prod') {
             agent {
                 docker {
