@@ -6,7 +6,7 @@ pipeline {
     }
 
     stages {
-
+    /*
         stage('Build') {
             agent {
                 docker {
@@ -95,6 +95,7 @@ pipeline {
                 '''
             }
         } 
+        */
         stage('Manual Approval') {
             steps {
                 timeout(1) {
