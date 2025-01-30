@@ -13,6 +13,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:18-alpine'
+                    args '-u root'
                     reuseNode true
                 }
             }
@@ -34,6 +35,7 @@ pipeline {
                     agent {
                         docker {
                             image 'node:18-alpine'
+                            args '-u root'
                             reuseNode true
                         }
                     }
@@ -55,6 +57,7 @@ pipeline {
                     agent {
                         docker {
                             image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
+                            args '-u root'
                             reuseNode true
                         }
                     }
@@ -81,6 +84,7 @@ pipeline {
             agent {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
+                    args '-u root'
                     reuseNode true
                 }
             }
@@ -112,6 +116,7 @@ pipeline {
             agent {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
+                    args '-u root'
                     reuseNode true
                 }
             }
